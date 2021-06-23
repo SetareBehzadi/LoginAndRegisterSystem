@@ -1,0 +1,78 @@
+body {
+  direction: rtl;
+  font-family: IRANSans !important;
+}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: IRANSans !important;
+}
+
+.bgImage {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: contain;
+}
+
+.green-bg {
+  background-color: #45A132 !important;
+}
+
+.greenColor {
+  color: #45A132;
+}
+
+.grayColor {
+  color: #595959;
+}
+
+.footer {
+  padding: 90px 50px;
+  box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 0.32);
+}
+
+.green-bar {
+  height: 30px;
+}
+
+.nav-container {
+  box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.2);
+}
+
+.nav-container .behine-navbar {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-container .behine-navbar ul li {
+  margin: 0 5px;
+}
+
+.nav-container .behine-navbar ul li a {
+  border-radius: 25px;
+  font-size: 1em;
+  padding: 0.5rem 2rem !important;
+  box-sizing: border-box;
+  border: 1px solid white;
+}
+
+.nav-container .behine-navbar ul li a:hover {
+  background: #93C588;
+  border-color: #45A132;
+}
+
+.nav-container .behine-navbar .myShoppingBtn {
+  border-radius: 25px;
+  padding: 0.5rem 3rem;
+}
+

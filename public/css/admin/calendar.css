@@ -1,0 +1,201 @@
+.clander-tabel {
+  width: 98%;
+  height: 500px;
+  margin: 0 auto;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 10pt;
+  color: #fff;
+  outline: none;
+}
+
+a:hover,
+a:active {
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 10pt;
+  color: #ccc;
+}
+
+.calendar-body {
+  text-align: right;
+  vertical-align: top;
+  height: 9em !important;
+  border: 1px solid #e2e2e2;
+  width: 16rem;
+  font-size: 1.2em;
+  padding: 5px;
+}
+
+.calendar-today {
+  display: flex;
+  font-weight: bold;
+  height: 100% !important;
+  padding-top: 4px;
+  text-align: right;
+  width: 100%;
+  color: #3254ff;
+  font-size: 1.2em;
+  border: 1px solid;
+  flex-direction: column;
+}
+
+.todayTxt {
+  flex: 1;
+  height: 21px;
+  justify-content: flex-end;
+  display: flex;
+}
+
+td {
+  width: 48px;
+  font-size: 10pt;
+  color: #000;
+  font-family: IRANSans;
+  padding: 12px;
+  cursor: pointer;
+}
+
+td .calendar-head:hover {
+  background: #ecba52;
+}
+
+td .calendar-body:hover {
+  background: #666;
+}
+
+td .calendar-today:hover {
+  background: #666;
+}
+
+span {
+  font-weight: bold;
+}
+
+.calendar-head {
+  text-align: center;
+  background: #6070eb;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.event {
+  color: #3396ff;
+}
+
+.events {
+  background: #3254ff;
+  color: #ffffff;
+  padding: 2px;
+  margin-bottom: 2px;
+  font-size: 0.9em;
+}
+
+.taskchecker {
+  width: 200px;
+  text-align: justify;
+  color: #000;
+  background-color: #3396ff;
+  direction: rtl;
+  font-size: 10pt;
+}
+
+.taskboxclass {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  visibility: hidden;
+  width: 0px;
+}
+
+.tcpadding {
+  padding: 10px;
+}
+
+.select2-container {
+  width: 100% !important;
+}
+
+.mystyle {
+  position: absolute;
+  top: 246px;
+  left: 703.5px;
+  Z-INDEX: 9999;
+}
+
+.select2-container .select2-container--default .select2-container--open {
+  z-index: 1000000;
+}
+
+.select2-dropdown {
+  z-index: 1000000;
+}
+
+.select2-close-mask {
+  z-index: 2099;
+}
+
+.select2-dropdown {
+  z-index: 3051;
+}
+
+.select2-container--open {
+  /* position: absolute;
+   top: 30px !important;
+   left: 0px !important;
+
+
+   saeedi*/
+  position: absolute;
+  top: 20px !important;
+  left: 15px !important;
+  width: calc(100% - 30px) !important;
+}
+
+body.modal-open {
+  overflow: visible;
+}
+
+.monthYearStyle {
+  width: 248px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.5em;
+}
+
+.left-fa-style {
+  flex: 0.75;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: flex-end;
+}
+
+.textLeftStyle {
+  flex: 2;
+}
+
+.textRightStyle {
+  flex: 2;
+}
+
+.leftAnchore {
+  font-size: 1.3em !important;
+  display: flex !important;
+  width: 100% !important;
+}
+
+.right-fa-style {
+  flex: 0.75;
+  display: flex;
+  font-size: 1.5em;
+  justify-content: flex-start;
+}
+
+.customFontColor {
+  color: #d4d4d4;
+}
+

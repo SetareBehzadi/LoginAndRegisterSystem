@@ -1,5 +1,7 @@
 <div>
-   welcome {{$full_name}}
+  <h1>
+      topic created
+  </h1>
 
     <button type="submit">
         go to website

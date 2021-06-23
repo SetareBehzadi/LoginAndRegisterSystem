@@ -1,0 +1,21 @@
+.package-list-Table td:last-child{
+    direction: ltr;
+    text-align: right;
+}
+
+.dataTables_length {
+    margin-top: 27px;
+}
+div.dataTables_wrapper div.dataTables_paginate ul.pagination {
+    margin: 2px 1px;
+}
+.select2-container .select2-selection--single{
+    height: 35px;
+}
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+    color: #444;
+    line-height: 37px;
+}
+.select2-container--default .select2-selection--single .select2-selection__arrow{
+    top: 5px;
+}

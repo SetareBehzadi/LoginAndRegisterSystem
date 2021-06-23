@@ -1,8 +1,7 @@
 @component('mail::message')
-# Introduction
--list1
--list2
-The body of your message.
+# User Registered
+- list1
+- list2
 
 @component('mail::button', ['url' => ''])
 Button Text

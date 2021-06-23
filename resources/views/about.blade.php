@@ -1,8 +1,7 @@
-@extends('site.layout')
+@extends('layout.home.index')
 
-@section('title')
-    about Us
-@stop
+@section('title','about')
+
 
 
 @section('content')

@@ -1,0 +1,12 @@
+.sectionOne {
+  background-color: #E4F4F6;
+  padding: 3rem 0;
+}
+
+.sectionOne .Image {
+  height: 700px;
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
