@@ -30,10 +30,24 @@
                     </div>--}}
                 </div>
                 <div class="ibox-content">
-                    <form>
+
+                      @if(session('success'))
+                        <div class="alert alert-success">
+                            {{session('success')}}
+                        </div>
+                          @endif
+
+                          @if(session('failed'))
+                              <div class="alert alert-danger">
+                                  {{session('failed')}}
+                              </div>
+                          @endif
+                    <form action="{{route('notification.send.email')}}" method="post">
+                        @csrf
                         <div class="form-group row"><label class="col-sm-2 col-form-label">  @lang('notification.users')</label>
 
-                            <div class="col-sm-10"><select class="form-control m-b" name="account">
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="user" id="user">
 
                                     @foreach($users as $user)
                                         <option value="{{$user['id']}}">{{$user['name']}}</option>
@@ -45,7 +59,8 @@
                         </div>
                         <div class="form-group row"><label class="col-sm-2 col-form-label">  @lang('notification.email_type')</label>
 
-                            <div class="col-sm-10"><select class="form-control m-b" name="account">
+                            <div class="col-sm-10">
+                                <select class="form-control m-b" name="email_type" id="email_type">
                                     @foreach($emailTypes as $key=>$value)
                                         <option value="{{$key}}">{{$value}}</option>
                                     @endforeach
@@ -53,6 +68,20 @@
 
                             </div>
                         </div>
+                        @if($errors->any())
+                            <ul>
+                                @foreach($errors->all() as $error)
+                                   <div class="small mb2">
+                                       <li class="text-danger">
+                                           {{$error}}
+                                       </li>
+                                   </div>
+                                    @endforeach
+                            </ul>
+                            @endif
+                        <ul>
+
+                        </ul>
                         <div class="form-group row">
                             <div class="col-lg-offset-2 col-lg-10">
                                 <button class="btn btn-sm btn-white" type="submit">  @lang('notification.send')</button>
