@@ -26,3 +26,5 @@ Route::get('/', function () {
 });
 Route::get('/notifications/send-email','NotificationsController@email')->name('notification.form.email');
 Route::post('/notifications/send-email','NotificationsController@sendEmail')->name('notification.send.email');
+Route::get('/notifications/send-sms','NotificationsController@sms')->name('notification.form.sms');
+Route::post('/notifications/send-sms','NotificationsController@sendSms')->name('notification.send.sms');

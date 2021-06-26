@@ -79,7 +79,8 @@ return [
     'max' => [
         'numeric' => 'The :attribute may not be greater than :max.',
         'file' => 'The :attribute may not be greater than :max kilobytes.',
-        'string' => 'The :attribute may not be greater than :max characters.',
+
+        'string' => ':attribute نباید بیشتر از :max کارکتر باشد.',
         'array' => 'The :attribute may not have more than :max items.',
     ],
     'mimes' => 'The :attribute must be a file of type: :values.',
@@ -111,7 +112,7 @@ return [
         'array' => 'The :attribute must contain :size items.',
     ],
     'starts_with' => 'The :attribute must start with one of the following: :values.',
-    'string' => 'The :attribute must be a string.',
+    'string' => ':attribute باید بصورت صحیح وارد شود.',
     'timezone' => 'The :attribute must be a valid zone.',
     'unique' => 'The :attribute has already been taken.',
     'uploaded' => 'The :attribute failed to upload.',
@@ -148,7 +149,8 @@ return [
 
     'attributes' => [
         'user'=>'کاربر',
-        'email_type'=>'نوع ایمیل'
+        'email_type'=>'نوع ایمیل',
+        'text'=>'متن پیام کوتاه'
     ],
 
 ];

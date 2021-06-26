@@ -5,6 +5,7 @@ namespace App\services\Notification\Providers;
 
 
 use App\Models\User;
+use App\services\Notification\Exceptions\UserDoesnotHaveNumber;
 use App\services\Notification\Providers\Contracts\Provider;
 use GuzzleHttp\Client;
 
@@ -19,6 +20,7 @@ class SmsProvider implements Provider
     }
     public function send()
     {
+        $this->havePhone();
         $clinet = new Client();
 
 
@@ -39,5 +41,11 @@ class SmsProvider implements Provider
         ];
 
         return $option;
+    }
+
+    private function havePhone(){
+        if(is_null($this->user->phone_number)){
+            throw new UserDoesnotHaveNumber();
+        }
     }
 }
