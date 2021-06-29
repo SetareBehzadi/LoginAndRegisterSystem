@@ -21,10 +21,13 @@ use Illuminate\Support\Facades\Route;
     $notification->sendEmail(User::find(1),new TopicCreated);
     $notification->sendSms(User::find(1),'payame testi');
 });*/
-Route::get('/', function () {
-    return view('about');
+Route::get('/',function (){
+    return view('welcome');
+})->name('home');
+
+Route::group(['prefix'=>'auth','namespace'=>'Auth'],function (){
+    Route::get('register','RegisterController@showRegistrationForm')->name('auth.register.form');
+    Route::post('register','RegisterController@register')->name('auth.register');
+
+
 });
-Route::get('/notifications/send-email','NotificationsController@email')->name('notification.form.email');
-Route::post('/notifications/send-email','NotificationsController@sendEmail')->name('notification.send.email');
-Route::get('/notifications/send-sms','NotificationsController@sms')->name('notification.form.sms');
-Route::post('/notifications/send-sms','NotificationsController@sendSms')->name('notification.send.sms');
