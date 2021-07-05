@@ -48,35 +48,31 @@ class LoginController extends Controller
         return view('auth.two-factor.login-code');
     }
 
+protected function attemptLogin(Request $request){
+        return Auth::attempt($request->only('email','password'),$request->filled(('remember')));
+}
 
-  /*  public function login(Request $request)
+    public function login(Request $request)
     {
         $this->validateForm($request);
-        if ($this->hasTooManyLoginAttempts($request)) {
-            return $this->sendLockoutResponse($request);
+      //check username and password
+
+      if ($this->attemptLogin($request)) {
+
+            return $this->sendSuccessResponse();
         }
 
-        if (!$this->isValidCredentials($request)) {
-            $this->incrementLoginAttempts($request);
-            return $this->sendLoginFailedResponse();
-        }
-
-        $user = $this->getUser($request);
-
-        if ($user->hasTwoFactor()) {
-            $this->twoFactor->requestCode($user);
-            return $this->sendHasTwoFactorResponse();
-        }
-
-        Auth::login($user, $request->remember);
-        return $this->sendSuccessResponse();
-    }*/
+       return $this->sendLoginFailedResponse();
+    }
 
     protected function sendHasTwoFactorResponse()
     {
         return redirect()->route('auth.login.code.form');
     }
 
+    protected function loginAndRedirect(){
+
+    }
     protected function sendLoginFailedResponse()
     {
         return back()->with('wrongCredentials', true);
@@ -91,7 +87,7 @@ class LoginController extends Controller
     protected function sendSuccessResponse()
     {
         session()->regenerate();
-        return redirect()->intended();
+        return redirect()->intended();//
     }
 
 /*    public function confirmCode(Code $request)

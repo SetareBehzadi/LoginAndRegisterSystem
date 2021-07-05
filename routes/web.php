@@ -3,6 +3,7 @@
 use App\Mail\TopicCreated;
 use App\Models\User;
 use App\services\Notification\Notification;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -28,6 +29,11 @@ Route::get('/',function (){
 Route::group(['prefix'=>'auth','namespace'=>'Auth'],function (){
     Route::get('register','RegisterController@showRegistrationForm')->name('auth.register.form');
     Route::post('register','RegisterController@register')->name('auth.register');
+    Route::get('login','LoginController@showLoginForm')->name('auth.login.form');
+    Route::post('login','LoginController@login')->name('auth.login');
+    Route::get('logout','LoginController@logout')->name('auth.logout');
 
-
+});
+Route::get('logout',function (){
+    Auth::logout();
 });
