@@ -1,0 +1,33 @@
+.form-control[readonly] {
+    background: white;
+}
+.form-control[readonly] {
+    background: white;
+}
+.chosen-container-multi .chosen-choices li {
+    float: right;
+    list-style: none;
+}
+
+.chosen-container-multi .chosen-choices li.search-choice{
+    padding-left: 5px !important;
+    color: #46799b !important;
+    background: #e0eaf1 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    border-radius: 2px 0 0 2px !important;
+    font-family: IRANSans !important;
+    padding: 4px 20px;
+    border: none;
+    line-height: 18px;
+}
+.chosen-container-multi .chosen-choices li.search-choice .search-choice-close {
+    top:7px
+}
+.form-control[readonly] {
+    background: white;
+}
+
+
+
