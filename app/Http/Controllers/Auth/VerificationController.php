@@ -46,29 +46,34 @@ class VerificationController extends Controller
 
     public function send()
     {
-        if (Auth::user()->hasVerifiedEmail()) {
+        //user feli ro begirim
+        //create signed route
+        //send url
+        //redirect
+
+    if (Auth::user()->hasVerifiedEmail()) {
             return redirect()->route('home');
         }
-        Auth::user()->sendEmailVerificationNotification();
-        return back()->with('verificationEmailSent', true);
+        Auth::user()->sendEmailVerificationNotification();//email ersal mishe
+         return back()->with('verificationEmailSent', true);
     }
 
 
-    public function verify(Request $request)
+  public function verify(Request $request)
     {
-        if ($request->user()->email !== $request->query('email')) {
-            throw new AuthorizationException;
-        }
+             if ($request->user()->email !== $request->query('email')) {
+               throw new AuthorizationException;
+           }
 
-        if ($request->user()->hasVerifiedEmail()) {
-            return redirect()->route('home');
-        }
+           if ($request->user()->hasVerifiedEmail()) {
+               return redirect()->route('home');
+           }
 
-        $request->user()->markEmailAsVerified();
+           $request->user()->markEmailAsVerified();
 
-        session()->forget('mustVerifyEmail');
+           session()->forget('mustVerifyEmail');
 
 
-        return redirect()->route('home')->with('emailHasVerified', true);
+           return redirect()->route('home')->with('emailHasVerified', true);
     }
 }

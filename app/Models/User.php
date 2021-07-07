@@ -2,6 +2,9 @@
 
 namespace App\Models;
 
+use App\Jobs\SendEmail;
+use App\Mail\VerificationEmail;
+use Illuminate\Auth\Notifications\VerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -35,4 +38,9 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function sendEmailVerificationNotification()
+{
+    SendEmail::dispatch($this , new VerificationEmail($this));
+}
 }

@@ -16,7 +16,7 @@
    @include('partials.navbar')
    @if (session('mustVerifyEmail'))
    <div class="alert alert-danger text-center">
-      @lang('auth.you must verify your email' )
+      @lang('auth.you must verify your email' , ['link' => route('auth.email.send.verification')])
    </div>
    @endif
    @if (session('verificationEmailSent'))
